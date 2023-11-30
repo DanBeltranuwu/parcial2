@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
-import { FotoEntity } from 'src/foto/foto.entity';
-import { RedSocialEntity } from 'src/red-social/red-social.entity';
+import { FotoEntity } from '../../src/foto/foto.entity';
+import { RedSocialEntity } from '../../src/red-social/red-social.entity';
 import {
   Column,
   Entity,

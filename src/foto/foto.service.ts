@@ -6,8 +6,8 @@ import { FotoEntity } from './foto.entity';
 import {
   BusinessError,
   BusinessLogicException,
-} from 'src/shared/errors/business-errors';
-import { AlbumEntity } from 'src/album/album.entity';
+} from '../../src/shared/errors/business-errors';
+import { AlbumEntity } from '../../src/album/album.entity';
 
 @Injectable()
 export class FotoService {
@@ -58,8 +58,23 @@ export class FotoService {
         BusinessError.BAD_REQUEST,
       );
     }
+    var validate = 0;
+    if (foto.ISO > 3250) {
+      validate += 1;
+    }
+    if (foto.velObturacion > 126) {
+      validate += 1;
+    }
+    if (foto.apertura > 16) {
+      validate += 1;
+    }
+    if (validate > 2) {
+      throw new BusinessLogicException(
+        'The photo must follow the exposure triangule rule',
+        BusinessError.BAD_REQUEST,
+      );
+    }
 
-    
     return await this.fotoRepository.save(foto);
   }
 

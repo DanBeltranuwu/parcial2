@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { AlbumEntity } from 'src/album/album.entity';
-import { UsuarioEntity } from 'src/usuario/usuario.entity';
+import { AlbumEntity } from '../../src/album/album.entity';
+import { UsuarioEntity } from '../../src/usuario/usuario.entity';
 import {
   Column,
   Entity,
