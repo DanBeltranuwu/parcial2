@@ -8,6 +8,9 @@ export class AlbumEntity {
  id: string;
 
  @Column()
+ fechaInicio: string;
+ 
+ @Column()
  fechaFin: string;
  
  @Column()
